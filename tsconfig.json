@@ -7,8 +7,8 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "commonjs", // Use commonjs to support Node.js for ts-node
+    "moduleResolution": "node", // Node resolution for ts-node compatibility
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -28,8 +28,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/lib/placeholder-data.ts",
-    "scripts/seed.js"
+    "lib/utils/consts/placeholder-data.ts",
+    "prisma/seed.ts", // Add the seed script here
+    "prisma/*.ts" // Ensure Prisma-related TypeScript files are included
   ],
   "exclude": ["node_modules"]
 }
